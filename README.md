@@ -20,3 +20,12 @@
 - Написать программу
 - Сделать запрос на слияние (pull request)
 - Ссылку на запрос на слияние прислать в ЭЛИНОС
+
+## Материалы для выполнения
+- https://metanit.com/sharp/tutorial/3.29.php
+- https://metanit.com/sharp/tutorial/7.1.php
+- https://metanit.com/sharp/tutorial/11.1.php
+- https://metanit.com/sharp/tutorial/13.3.php
+- https://metanit.com/sharp/tutorial/5.5.php
+- https://metanit.com/sharp/windowsforms/
+- https://metanit.com/sharp/wpf/
