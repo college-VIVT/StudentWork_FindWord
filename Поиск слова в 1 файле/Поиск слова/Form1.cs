@@ -20,7 +20,9 @@ namespace Поиск_слова
 
         private async void button1_Click(object sender, EventArgs e)
         {
-            using (var read = new StreamReader(textBox1.Text))
+            string b = textBox1.Text.Remove(0,1);
+            b = b.Remove(b.Length - 1, 1);
+            using (var read = new StreamReader(b))
             {
                 int k = 0;
                 string msg;
