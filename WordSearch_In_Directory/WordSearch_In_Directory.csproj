@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B328FD34-A213-4EA3-ACA2-595C286C29E6}</ProjectGuid>
+    <ProjectGuid>{AA525786-85C5-47DD-B9B1-92863658585E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>StudentWork_FindWord</RootNamespace>
-    <AssemblyName>StudentWork_FindWord</AssemblyName>
+    <RootNamespace>WordSearch_In_Directory</RootNamespace>
+    <AssemblyName>WordSearch_In_Directory</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
