@@ -1,13 +1,6 @@
 ﻿using System;
-using System.IO;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using FindWordLib;
 
 namespace Поиск_слова
 {
@@ -20,31 +13,13 @@ namespace Поиск_слова
 
         private async void button1_Click(object sender, EventArgs e)
         {
-            string b = textBox1.Text.Remove(0,1);
-            b = b.Remove(b.Length - 1, 1);
-            using (var read = new StreamReader(b))
-            {
-                int k = 0;
-                string msg;
-                while ((msg = await read.ReadLineAsync()) != null)
-                {
-                    string[] text = msg.Split(' ');
-                    if (checkBox1.Checked == false)
-                        foreach (string sr in text)
-                        {
-                            if (sr.ToUpper() == textBox2.Text.ToUpper())
-                                k++;
-                        }
-                    else
-                        foreach (string sr in text)
-                        {
-                            if (sr == textBox2.Text)
-                                k++;
-                        }
-                }
-                label3.Visible = true;
-                label3.Text = $"Слово {textBox2.Text}\nв файле {textBox1.Text}\nвстречается {k} раз";
-            }
+            string path = textBox1.Text.Remove(0, 1);
+            path = path.Remove(path.Length - 1, 1);
+            string textbox = textBox2.Text;
+            bool check = checkBox1.Checked;
+            label3.Visible = true;
+            label3.Text = $"Слово {textBox2.Text}\nв файле {textBox1.Text}\nвстречается {await FindWordClass.FindWordAsync(check, path, textbox)} раз";
+
         }
     }
 }
