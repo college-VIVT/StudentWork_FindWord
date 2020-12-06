@@ -25,28 +25,33 @@ namespace WordSearch_In_Directory
 
 		private async void button1_Click(object sender, EventArgs e)
 		{
+			load2 load2 = new load2();
 			try
 			{
 				textBox3.Clear();
-
+				load2.Show();
 				FindWord findWord = new FindWord() { Path_to_File = textBox1.Text, Finding_word = textBox2.Text };
 				await Task.Run(() =>
 				{
 					info = findWord.Find_in_Directory();
 				});
+				load2.Close();
 				textBox3.Text += info;
 
 			}
 			catch (FileNotFoundException)
 			{
+				load2.Close();
 				MessageBox.Show("Не удалось найти такой файл или неверно указан путь к файлу", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 			catch (ArgumentException)
 			{
+				load2.Close();
 				MessageBox.Show("Вы не указали путь к файлу", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 			catch (DirectoryNotFoundException)
 			{
+				load2.Close();
 				MessageBox.Show("Не удалось найти такую директорию или неверно указан путь к ней", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 

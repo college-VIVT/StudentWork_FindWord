@@ -22,6 +22,7 @@ namespace StudentWork_FindWord
 
 		async void button1_Click(object sender, EventArgs e)
 		{
+			textBox3.Clear();
 			try
 			{
 				FindWord findWord = new FindWord() { Path_to_File = textBox1.Text, Finding_word = textBox2.Text };
@@ -29,9 +30,6 @@ namespace StudentWork_FindWord
 				{
 					count = findWord.Find_in_File();
 				});
-				
-
-
 				textBox3.Text += textBox1.Text + "\r\n" + "Совпадений найдено: " + count;
 			}
 			catch (FileNotFoundException)
