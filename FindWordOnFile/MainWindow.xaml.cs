@@ -37,7 +37,7 @@ namespace FindWordOnFile
                 if (dialog.ShowDialog() == true)
                 {
                     FindWordSolver findWordSolver = new FindWordSolver();
-                    FindWordResult result = await findWordSolver.OnFile(openFileDialog.FileName, findWord);
+                    FindWordResult result = await findWordSolver.OnFile(dialog.FileName, findWord);
 
                     MessageBox.Show($"В файле \"{result.Path}\" найдено {result.Count} вхождений слова \"{findWord}\"");
                 }
