@@ -1,0 +1,17 @@
+﻿<Window x:Class="FindWordOnFile.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FindWordOnFile"
+        mc:Ignorable="d"
+        Title="Найти слово в файле" Height="109" Width="327" MaxWidth="327" MaxHeight="109" MinHeight="109" MinWidth="327" WindowStyle="ToolWindow">
+    <Grid Height="97" VerticalAlignment="Top" HorizontalAlignment="Center" Width="327">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Найти слово" Margin="10,0,225,68"/>
+        <TextBox x:Name="find" Margin="10,29,132,29" TextWrapping="Wrap"/>
+        <Button Content="Выбрать файл" Margin="200,29,0,29" Click="Button_Click" RenderTransformOrigin="0.515,-0.199" HorizontalAlignment="Left" Width="117"/>
+    </Grid>
+</Window>

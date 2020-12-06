@@ -1,0 +1,22 @@
+﻿<Window x:Class="FindWordOnDirectory.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FindWordOnDirectory"
+        mc:Ignorable="d"
+        Title="Найти слово в директории" Height="318" Width="337" WindowStyle="ToolWindow">
+    <Grid>
+        <Label Content="Искомое слово" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Cursor=""/>
+        <TextBox x:Name="find" HorizontalAlignment="Left" Margin="10,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="163" Height="25"/>
+        <Button Click="Button_Click" Content="Выбрать директорию" Margin="183,35,10,0" VerticalAlignment="Top" Height="25"/>
+        <DataGrid Margin="10,65,10,0" Name="gridResults" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn IsReadOnly="True" Header="Путь" Width="230" Binding="{Binding Path=Path}" />
+                <DataGridTextColumn IsReadOnly="True" Header="Вхождений" Binding="{Binding Path=Count}" />
+            </DataGrid.Columns>
+
+        </DataGrid>
+
+    </Grid>
+</Window>
