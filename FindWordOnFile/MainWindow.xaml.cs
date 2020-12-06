@@ -33,8 +33,8 @@ namespace FindWordOnFile
 
             if(!String.IsNullOrEmpty(findWord))
             {
-                OpenFileDialog openFileDialog = new OpenFileDialog();
-                if (openFileDialog.ShowDialog() == true)
+                OpenFileDialog dialog = new OpenFileDialog();
+                if (dialog.ShowDialog() == true)
                 {
                     FindWordSolver findWordSolver = new FindWordSolver();
                     FindWordResult result = await findWordSolver.OnFile(openFileDialog.FileName, findWord);

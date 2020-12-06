@@ -1,17 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using FindWord;
+using Microsoft.WindowsAPICodePack.Dialogs;
 
 namespace FindWordOnDirectory
 {
@@ -23,6 +14,38 @@ namespace FindWordOnDirectory
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private async void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+            string findWord = find.Text.Trim();
+
+            if (!String.IsNullOrEmpty(findWord))
+            {
+                CommonOpenFileDialog dialog = new CommonOpenFileDialog();
+                dialog.IsFolderPicker = true;
+                if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
+                {
+                    FindWordSolver findWordSolver = new FindWordSolver();
+                    List<FindWordResult> results = await findWordSolver.OnDirectory(dialog.FileName, findWord);
+                    if(results.Count > 0)
+                    {
+                        gridResults.Items.Clear();
+                        foreach (FindWordResult result in results)
+                        {
+                            gridResults.Items.Add(result);
+                        }
+                    } else
+                    {
+                        MessageBox.Show($"В данной директории не найдено не одного вхождения данного слова в файлы");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show($"Введите искомое слово");
+            }
         }
     }
 }
