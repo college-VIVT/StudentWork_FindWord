@@ -79,5 +79,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FindClassLi\FindClassLi.csproj">
+      <Project>{0b79e0d5-7912-4f77-bbe6-eb925098e830}</Project>
+      <Name>FindClassLi</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
